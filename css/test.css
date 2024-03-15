@@ -1,0 +1,676 @@
+.ca-cun-doortech-child {
+    position: absolute;
+    top: 522px;
+    left: 0;
+    width: 1728px;
+    height: 620px;
+    object-fit: cover;
+}
+
+.ca-cun-doortech-item {
+    position: absolute;
+    top: 435px;
+    left: 0;
+    background-color: var(--color-dimgray);
+    width: 1728px;
+    height: 87px;
+}
+
+.ca-cun-doortech-inner {
+    position: absolute;
+    top: 451px;
+    left: 24px;
+    background-color: var(--color-powderblue);
+    width: 181px;
+    height: 38px;
+}
+
+.rectangle-icon {
+    position: absolute;
+    top: 451px;
+    left: 249px;
+    width: 178px;
+    height: 38px;
+}
+
+.ca-cun-doortech-child1,
+.ca-cun-doortech-child2,
+.rectangle-div {
+    position: absolute;
+    top: 451px;
+    left: 474px;
+    background-color: var(--color-powderblue);
+    width: 185px;
+    height: 38px;
+}
+
+.ca-cun-doortech-child1,
+.ca-cun-doortech-child2 {
+    left: 710px;
+    width: 175px;
+}
+
+.ca-cun-doortech-child2 {
+    left: 1172px;
+    background-color: var(--color-gainsboro);
+    width: 376px;
+    height: 55px;
+}
+
+.trang-ch {
+    position: absolute;
+    top: 461px;
+    left: 65px;
+    font-size: var(--font-size-lg);
+    font-weight: 900;
+    display: inline-block;
+    width: 94px;
+    height: 35px;
+}
+
+.sn-phm {
+    position: relative;
+    font-weight: 500;
+    transform: rotate(-0.51deg);
+}
+
+.sn-phm-wrapper {
+    position: absolute;
+    top: 449.6px;
+    left: 279.8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs);
+    font-size: var(--font-size-lg);
+}
+
+.dch-v-sa {
+    margin: 0;
+}
+
+.dch-v-sa-container {
+    position: absolute;
+    top: 460px;
+    left: 715px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    display: inline-block;
+    width: 170px;
+    height: 30px;
+}
+
+.ph-kin,
+.tm-kim-sn-container {
+    position: absolute;
+    display: inline-block;
+    height: 35px;
+}
+
+.ph-kin {
+    top: 459px;
+    left: 524px;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    width: 94px;
+}
+
+.tm-kim-sn-container {
+    top: 461px;
+    left: 1206px;
+    font-size: var(--font-size-xl);
+    width: 311px;
+}
+
+.ca-cun-doortech-child3 {
+    position: absolute;
+    top: 1208px;
+    left: 0;
+    background-color: var(--color-darkorange);
+    width: 350px;
+    height: 476px;
+}
+
+.ph-kin2 {
+    position: absolute;
+    top: 1316px;
+    left: 43px;
+    font-weight: 900;
+}
+
+.ca-cun-stardoor,
+.ca-ko-i,
+.ca-nhm {
+    position: absolute;
+    top: 1369px;
+    left: 47px;
+    font-weight: 900;
+}
+
+.ca-cun-stardoor,
+.ca-nhm {
+    top: 1430px;
+    left: 49px;
+}
+
+.ca-cun-stardoor {
+    top: 1487px;
+    left: 47px;
+}
+
+.ca-cun-austdoor,
+.ca-cun-doortech1 {
+    position: absolute;
+    top: 1545px;
+    left: 43px;
+    font-weight: 900;
+}
+
+.ca-cun-doortech1 {
+    top: 1602px;
+}
+
+.ca-cun-doortech-child4 {
+    position: absolute;
+    top: 455px;
+    left: 1483px;
+    width: 42px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.ca-cun-doortech-child5,
+.group-icon {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 1728px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.ca-cun-doortech-child5 {
+    left: 159px;
+    width: 524px;
+}
+
+.a-ch-93a1,
+.t-vn-018820288 {
+    position: absolute;
+    top: 237px;
+    left: 930px;
+    font-weight: 900;
+}
+
+.t-vn-018820288 {
+    top: 177px;
+}
+
+.vector-icon,
+.vector-icon1 {
+    position: absolute;
+    height: 0.5%;
+    width: 1.45%;
+    top: 4.66%;
+    right: 46.53%;
+    bottom: 94.84%;
+    left: 52.03%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.vector-icon1 {
+    height: 0.59%;
+    width: 1.1%;
+    top: 6.11%;
+    right: 46.7%;
+    bottom: 93.3%;
+    left: 52.2%;
+}
+
+.ti-khon {
+    position: absolute;
+    top: 74px;
+    left: 1504px;
+    font-size: var(--font-size-13xl);
+    color: var(--color-gainsboro);
+}
+
+.ca-cun-doortech-child6 {
+    position: absolute;
+    top: 1208px;
+    left: 0;
+    background-color: var(--color-black);
+    width: 350px;
+    height: 92px;
+}
+
+.danh-mc-sn {
+    position: absolute;
+    top: 1239px;
+    left: 53px;
+    font-weight: 900;
+    color: var(--color-white);
+}
+
+.line-1-stroke,
+.line-2-stroke {
+    position: absolute;
+    top: 1352.5px;
+    left: 38px;
+    width: 259px;
+    height: 1px;
+}
+
+.line-2-stroke {
+    top: 1409.5px;
+}
+
+.line-3-stroke,
+.line-4-stroke,
+.line-5-stroke,
+.line-6-stroke {
+    position: absolute;
+    top: 1466.5px;
+    left: 38px;
+    width: 259px;
+    height: 1px;
+}
+
+.line-4-stroke,
+.line-5-stroke,
+.line-6-stroke {
+    top: 1523.5px;
+}
+
+.line-5-stroke,
+.line-6-stroke {
+    top: 1580.5px;
+}
+
+.line-6-stroke {
+    top: 1637.5px;
+    left: 31px;
+}
+
+.ca-cun-doortech-child7,
+.ca-cun-doortech-child8,
+.ca-cun-doortech-child9 {
+    position: absolute;
+    top: 1338px;
+    left: 421px;
+    width: 299px;
+    height: 172px;
+    object-fit: cover;
+}
+
+.ca-cun-doortech-child8,
+.ca-cun-doortech-child9 {
+    top: 1672px;
+}
+
+.ca-cun-doortech-child9 {
+    left: 891px;
+}
+
+.ca-cun-doortech-child10,
+.ca-cun-doortech-child11,
+.ca-cun-doortech-child12 {
+    position: absolute;
+    top: 1340px;
+    left: 891px;
+    width: 299px;
+    height: 172px;
+    object-fit: cover;
+}
+
+.ca-cun-doortech-child11,
+.ca-cun-doortech-child12 {
+    left: 1337px;
+}
+
+.ca-cun-doortech-child12 {
+    top: 3190px;
+    left: 0;
+    width: 1728px;
+    height: 692px;
+}
+
+.ca-cun-doortech-child13,
+.ca-cun-doortech-child14 {
+    position: absolute;
+    top: 1545px;
+    left: 431px;
+    background-color: var(--color-gainsboro);
+    width: 289px;
+    height: 57px;
+}
+
+.ca-cun-doortech-child14 {
+    top: 1870px;
+    left: 421px;
+    width: 299px;
+}
+
+.ca-cun-doortech-child15,
+.ca-cun-doortech-child16,
+.ca-cun-doortech-child17 {
+    position: absolute;
+    top: 1545px;
+    left: 887px;
+    background-color: var(--color-gainsboro);
+    width: 303px;
+    height: 57px;
+}
+
+.ca-cun-doortech-child16,
+.ca-cun-doortech-child17 {
+    top: 1870px;
+}
+
+.ca-cun-doortech-child17 {
+    top: 1543px;
+    left: 1337px;
+    width: 299px;
+}
+
+.ca-cun-in-container {
+    position: absolute;
+    top: 3305px;
+    left: 1273px;
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+    color: var(--color-white);
+}
+
+.line-icon {
+    position: absolute;
+    top: 3470px;
+    left: 32px;
+    width: 240px;
+    height: 205px;
+}
+
+.minh-tm-door,
+.thng-tin {
+    color: var(--color-darkorange);
+}
+
+.minh-tm-door {
+    position: absolute;
+    top: 3256px;
+    left: 22px;
+    font-weight: 900;
+}
+
+.thng-tin {
+    top: 3255px;
+    left: 600px;
+}
+
+.nhn-bit-sn-container,
+.sn-phm2,
+.thng-tin {
+    position: absolute;
+    font-weight: 900;
+}
+
+.nhn-bit-sn-container {
+    top: 3314px;
+    left: 600px;
+    font-size: var(--font-size-3xl);
+    color: var(--color-white);
+}
+
+.sn-phm2 {
+    top: 3249px;
+    left: 1286px;
+    color: var(--color-darkorange);
+}
+
+.cung-cp-cc {
+    font-weight: 500;
+    font-family: var(--font-inter);
+    color: var(--color-white);
+}
+
+.bn-tre-m,
+.bnh-i-ba {
+    font-weight: 900;
+}
+
+.bnh-i-ba {
+    margin: 0;
+}
+
+.cung-cp-cc-container,
+.t-vn-container {
+    position: absolute;
+    top: 3368px;
+    left: 32px;
+    font-size: var(--font-size-xl);
+    display: inline-block;
+    width: 250px;
+    color: var(--color-darkorange);
+}
+
+.t-vn-container {
+    top: 3554px;
+    left: 31px;
+    font-weight: 500;
+    color: var(--color-white);
+    width: 328px;
+}
+
+.vector-icon2 {
+    position: absolute;
+    height: 0.82%;
+    width: 1.74%;
+    top: 1.91%;
+    right: 13.08%;
+    bottom: 97.27%;
+    left: 85.19%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.gi-bn {
+    font-family: var(--font-inter);
+    color: var(--color-darkblue);
+}
+
+.gi-bn-2560000 {
+    margin: 0;
+    color: var(--color-black);
+}
+
+.ca-cun-doortech-container,
+.ca-cun-doortech-container1 {
+    position: absolute;
+    top: 1552px;
+    left: 440px;
+    font-size: var(--font-size-lg);
+    color: var(--color-red);
+}
+
+.ca-cun-doortech-container1 {
+    top: 1875px;
+    left: 431px;
+}
+
+.gi-bn3 {
+    font-family: var(--font-inter);
+}
+
+.span {
+    color: var(--color-darkblue);
+}
+
+.ca-cun-doortech-container2,
+.ca-cun-doortech-container3 {
+    position: absolute;
+    top: 1549px;
+    left: 891px;
+    font-size: var(--font-size-lg);
+    color: var(--color-red);
+}
+
+.ca-cun-doortech-container3 {
+    top: 1875px;
+    left: 907px;
+}
+
+.span1 {
+    color: var(--color-black);
+}
+
+.ca-cun-doortech-container4 {
+    position: absolute;
+    top: 1545px;
+    left: 1343px;
+    font-size: var(--font-size-lg);
+    color: var(--color-red);
+}
+
+.vector-icon3,
+.vector-icon4 {
+    position: absolute;
+    height: 0.26%;
+    width: 0.9%;
+    top: 12%;
+    right: 76.88%;
+    bottom: 87.74%;
+    left: 22.22%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.vector-icon4 {
+    right: 64.26%;
+    left: 34.84%;
+}
+
+.ca-cun-doortech-child18 {
+    position: absolute;
+    top: 1208px;
+    left: 421px;
+    background-color: var(--color-gainsboro);
+    width: 1307px;
+    height: 102px;
+}
+
+.ca-cun-doortech7 {
+    position: absolute;
+    top: 1246px;
+    left: 440px;
+    font-size: var(--font-size-13xl);
+    font-weight: 900;
+    color: var(--color-mediumvioletred-100);
+}
+
+.ca-cun-doortech-child19,
+.ca-cun-doortech-child20,
+.ca-cun-doortech-child21,
+.ca-cun-doortech-child22 {
+    position: absolute;
+    top: 1976px;
+    left: 0;
+    background-color: var(--color-darkseagreen);
+    width: 1728px;
+    height: 139px;
+}
+
+.ca-cun-doortech-child20,
+.ca-cun-doortech-child21,
+.ca-cun-doortech-child22 {
+    top: 2343px;
+}
+
+.ca-cun-doortech-child21,
+.ca-cun-doortech-child22 {
+    top: 2634px;
+}
+
+.ca-cun-doortech-child22 {
+    top: 2890px;
+}
+
+.bo-gi-ca,
+.ca-cun-doortech8,
+.mu-ca-cun,
+.sa-cha-ca {
+    position: absolute;
+    top: 2030px;
+    left: 38px;
+    font-size: var(--font-size-13xl);
+    display: inline-block;
+    font-weight: 900;
+    color: var(--color-green);
+    width: 931px;
+    height: 32px;
+}
+
+.bo-gi-ca,
+.mu-ca-cun,
+.sa-cha-ca {
+    top: 2397px;
+    width: 648px;
+}
+
+.mu-ca-cun,
+.sa-cha-ca {
+    top: 2688px;
+    width: 562px;
+    height: 31px;
+}
+
+.sa-cha-ca {
+    top: 2944px;
+    width: 534px;
+    height: 32px;
+}
+
+.bo-gi-ca1,
+.ca-cun-doortech-c-sn,
+.mt-s-li,
+.mt-s-mu {
+    position: absolute;
+    top: 2141px;
+    left: 0;
+    display: inline-block;
+    width: 1399px;
+}
+
+.bo-gi-ca1,
+.mt-s-li,
+.mt-s-mu {
+    top: 2498px;
+    left: 10px;
+    width: 1209px;
+}
+
+.mt-s-li,
+.mt-s-mu {
+    top: 2803px;
+}
+
+.mt-s-li {
+    top: 3068px;
+    left: 0;
+}
+
+.ca-cun-doortech {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 3882px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+}

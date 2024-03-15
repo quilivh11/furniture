@@ -1,0 +1,99 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "1234";
+$dbname = "store";
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+session_start();
+if (!empty($_SESSION)) {
+    $username = $_SESSION["username"];
+    $password = $_SESSION["password"];
+}
+$stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows == 1) {
+    echo "<script>
+    function Menu() {
+        var option = document.querySelector('.optionlogged');
+        option.classList.toggle('visible');
+        var button = document.querySelector('.menubtn');
+        button.classList.toggle('roll');
+    }
+    </script>";
+} else {
+    echo "<script>
+    function Menu() {
+        var option = document.querySelector('.option');
+        option.classList.toggle('visible');
+        var button = document.querySelector('.menubtn');
+        button.classList.toggle('roll');
+    }
+    </script>";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/homepage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <!-- <img class="cover" alt="" src="/images/group-1@2x.png" /> -->
+        <img class="logo" alt="" src="/images/rectangle-17@2x.png" />
+        <!-- <img class="shopicon" alt="" src="/images/vector.svg"> -->
+        <div class="menu">
+            <button class="menubtn" onclick="Menu()">|||</button>
+        </div>
+    </div>
+    <div class="product">
+        <a href="/php/Homepage.php" id="link">
+            <button id="optionbar">Home</button>
+        </a>
+        <a href="/php/Homepage.php" id="link">
+            <button id="optionbar">Branch</button>
+        </a>
+        <a href="/php/Homepage.php" id="link">
+            <button id="optionbar">Contact</button>
+        </a>
+        <a href="/php/Homepage.php" id="link">
+            <button id="optionbar">About us</button>
+        </a>
+        <a id="searchbox" class="searchbox" >
+            <input type="search" class="font" id="optionbar" class="search" placeholder="Find something here..." >  
+        </a>
+        <a href="#" class="searchicon" >
+        <img src="/images/search.png" id="searchicon" style="color: blue;" >
+        </a>
+    </div>
+    <div class="option">
+        <a href="/php/Login.php" class="link">
+            <button id="optionbtn">Sign in</button>
+        </a>
+        <a href="/php/Signup.php" class="link">
+            <button id="optionbtn">Sign up</button>
+        </a>
+    </div>
+    <div class="optionlogged">
+        <h1>Hi user, <?php echo "$username";?>!</h1>
+        <a href="/php/Login.php  " class="link">
+            <button id="optionbtn">Account</button>
+        </a>
+        <a href="/php/destroyss.php" class="link">
+            <button id="optionbtn">Log out</button>
+        </a>
+    </div>
+</body>
+
+</html>

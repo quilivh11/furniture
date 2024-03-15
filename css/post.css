@@ -1,0 +1,53 @@
+/* body{
+    margin: 0;
+} */
+.flayout{
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    background-color: rgb(197, 197, 197);
+    margin: auto !important;
+    border-radius: 10px;
+}
+.layout{
+    margin-top: 10px;
+    
+    margin-bottom: 10px;
+}
+.combobox{
+    width: 100%;
+    height: 25px;
+}
+
+input#file{
+    display: none;
+}
+
+input[type="text"]{
+    width: 100%;
+    height: 25px;
+}
+label[for="file"]{
+    cursor: pointer;
+    background-color: rgb(146, 146, 146);
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+label[for="file"]:hover{
+    background-color: rgb(118, 118, 118);
+}
+.postlist{
+    margin-top: 10px;
+}
+.imglist{
+    margin-top: 25px;
+}
+#postbtn{
+    display: block;
+    margin: auto;
+    margin-top: 70px;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px;
+}
