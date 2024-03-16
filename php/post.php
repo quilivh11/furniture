@@ -1,5 +1,4 @@
 <?php
-sleep(1);
 $servername = "localhost";
 $username = "root";
 $password = "1234";
@@ -26,6 +25,10 @@ if ($result->num_rows == 1) {
         button.classList.toggle('roll');
     }
     </script>";
+} else {
+
+    sleep(1);
+    header("Location: /php/homepage.php");
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_FILES["file"]["name"]) && is_array($_FILES["file"]["name"])) {
@@ -33,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($_FILES['file']['name'] as $key => $value) {
             $targetFile = $targetDir . basename($_FILES["file"]["name"][$key]);
             $uploadOk = 1;
-            $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));    
+            $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
             $files = basename($_FILES["file"]["name"][$key]);
             $uploaded_files[] = $files;
             $file = implode(",", $uploaded_files);
@@ -150,11 +153,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="postlist">
                     <div class="postlist">
                         <label for="name">Product Name</label>
-                        <input type="text" name="name" required >
+                        <input type="text" name="name" required>
                     </div>
                     <div class="postlist">
                         <label for="price">Price</label>
-                        <input type="text" name="price" required >
+                        <input type="text" name="price" required>
                     </div>
                     <div class="imglist" id="imglist">
                         <input id="file" type="file" name="file[]" multiple required>

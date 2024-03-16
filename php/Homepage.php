@@ -11,8 +11,15 @@ session_start();
 if (!empty($_SESSION)) {
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];
+    $stmt = $conn->prepare("SELECT username FROM employees WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+if ($result->num_rows == 1) {
+    header("Location: /php/Admin.php");
 }
-$stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
+}
+$stmt = $conn->prepare("SELECT username FROM customer WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -93,6 +100,36 @@ if ($result->num_rows == 1) {
         <a href="/php/destroyss.php" class="link">
             <button id="optionbtn">Log out</button>
         </a>
+    </div>
+    <div>
+        <h1>All product</h1>
+        <?php
+        $vd = 0;
+        $stmt = $conn->prepare("SELECT PName,prices,image,validproduct FROM product WHERE validproduct > ?");
+        $stmt->bind_param("s", $vd);
+        $stmt->execute();
+        $result = $stmt->get_result();
+            if ($result->num_rows > 0) {
+                if ($result->num_rows > 0) {
+                    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                    $rows = array_reverse($rows);
+                    foreach ($rows as $row) {
+                        echo "<div class='productform'>";
+                        echo "<div class='imgsize'><img id='imgsize' src='/images/" . $row["image"] . "' ></div>";
+                        echo "<div class='priceform'>";
+                        echo "<p class = 'pdname' >" . $row["PName"] . "</p>";
+                        // echo "<p>Available: " . $row["validproduct"] . "</p>";
+                        echo "<p class = 'pnum'>" . $row["prices"] . " VND</p>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                }
+            } else {
+                echo "Dont have valid product";
+            }
+            $conn->close();
+            ?>
+        <a href="#"></a>
     </div>
 </body>
 

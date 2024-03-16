@@ -22,7 +22,7 @@ if ($result->num_rows == 1) {
         var option = document.querySelector('.optionlogged');
         option.classList.toggle('visible');
         var button = document.querySelector('.menubtn');
-        button.classList.toggle('hidden');
+        button.classList.toggle('roll');
     }
     </script>";
 }else{
