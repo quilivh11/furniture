@@ -25,16 +25,7 @@ if ($result->num_rows == 1) {
         button.classList.toggle('roll');
     }
     </script>";
-} else {
-    echo "<script>
-    function Menu() {
-        var option = document.querySelector('.option');
-        option.classList.toggle('visible');
-        var button = document.querySelector('.menubtn');
-        button.classList.toggle('roll');
-    }
-    </script>";
-}
+} 
 ?>
 
 <!DOCTYPE html>
@@ -59,16 +50,16 @@ if ($result->num_rows == 1) {
         </div>
     </div>
     <div class="product">
-        <a href="/php/Homepage.php" id="link">
+        <a href="/php/Admin.php" id="link">
             <button id="optionbar">Home</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">Branch</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">Contact</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">About us</button>
         </a>
         <a id="searchbox" class="searchbox">
@@ -76,14 +67,6 @@ if ($result->num_rows == 1) {
         </a>
         <a href="#" class="searchicon">
             <img src="/images/search.png" id="searchicon" style="color: blue;">
-        </a>
-    </div>
-    <div class="option">
-        <a href="/php/Login.php" class="link">
-            <button id="optionbtn">Sign in</button>
-        </a>
-        <a href="/php/Signup.php" class="link">
-            <button id="optionbtn">Sign up</button>
         </a>
     </div>
     <div class="optionlogged">

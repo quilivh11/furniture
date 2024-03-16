@@ -58,7 +58,7 @@
             $result = $stmt->get_result();
             if ($result->num_rows == 1) {
                 echo '<script>alert("Already exist. Please try another Phone number!");</script>';
-                header("Refresh:0");
+                // header("Refresh:0");
             } else {
                 if ($cfpassword !== $password) {
                     echo '<script>alert("Confirm password not match. Please try again!");</script>';
@@ -80,27 +80,10 @@
                     $insertStudentStmt->close();
                 }
             }
-        } else {
-            session_start();
-            $username = $_SESSION["username"];
-            $password = $_SESSION["password"];
-            $stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
-            $stmt->bind_param("s", $username);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            if ($result->num_rows == 1) {
-                $row = $result->fetch_assoc();
-                $dbpassword = $row['password'];
-                $stmt->close();
-                if (password_verify($password, $dbpassword)) {
-                    header("Location: /php/Homepage.php");
-                    exit();
-                } 
-            }
         }
         $conn->close();
         ?>
-        </>
+    </scrip>
 </body>
 
 </html>

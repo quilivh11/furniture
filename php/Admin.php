@@ -12,7 +12,7 @@ if (!empty($_SESSION)) {
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];
 }
-$stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
+$stmt = $conn->prepare("SELECT username FROM employees WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -25,15 +25,8 @@ if ($result->num_rows == 1) {
         button.classList.toggle('roll');
     }
     </script>";
-} else {
-    echo "<script>
-    function Menu() {
-        var option = document.querySelector('.option');
-        option.classList.toggle('visible');
-        var button = document.querySelector('.menubtn');
-        button.classList.toggle('roll');
-    }
-    </script>";
+}else{
+    header("Location: /php/homepage.php");
 }
 ?>
 
@@ -58,16 +51,16 @@ if ($result->num_rows == 1) {
         </div>
     </div>
     <div class="product">
-        <a href="/php/Homepage.php" id="link">
+        <a href="/php/Admin.php" id="link">
             <button id="optionbar">Home</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">Branch</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">Contact</button>
         </a>
-        <a href="/php/Homepage.php" id="link">
+        <a href="#" id="link">
             <button id="optionbar">About us</button>
         </a>
         <a id="searchbox" class="searchbox" >
@@ -90,7 +83,7 @@ if ($result->num_rows == 1) {
         <a href="#" class="link">
             <button id="optionbtn">Manage Account</button>
         </a>
-        <a href="#" class="link">
+        <a href="/php/post.php" class="link">
             <button id="optionbtn">Post</button>
         </a>
         <a href="/php/destroyss.php" class="link">
