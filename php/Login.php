@@ -1,4 +1,5 @@
 <?php
+sleep(1);
 $servername = "localhost";
 $username = "root";
 $password = "1234";
@@ -27,9 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
             $result = $stmt->get_result();
             if ($result->num_rows == 1) {
+                sleep(1);
                 header("Location: /php/Admin.php");
                 exit();
             } else {
+                sleep(1);
                 header("Location: /php/Homepage.php");
                 exit();
             }

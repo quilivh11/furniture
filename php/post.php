@@ -1,4 +1,5 @@
 <?php
+sleep(1);
 $servername = "localhost";
 $username = "root";
 $password = "1234";
@@ -25,8 +26,61 @@ if ($result->num_rows == 1) {
         button.classList.toggle('roll');
     }
     </script>";
-} 
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_FILES["file"]["name"]) && is_array($_FILES["file"]["name"])) {
+        $targetDir = "C:\\Users\\quili\\OneDrive\\Máy tính\\furniture\\images\\";
+        foreach ($_FILES['file']['name'] as $key => $value) {
+            $targetFile = $targetDir . basename($_FILES["file"]["name"][$key]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));    
+            $files = basename($_FILES["file"]["name"][$key]);
+            $uploaded_files[] = $files;
+            $file = implode(",", $uploaded_files);
+        }
+        if (
+            $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif"
+        ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $uploadOk = 0;
+        }
+
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        } else {
+            if (move_uploaded_file($_FILES["file"]["tmp_name"][$key], $targetFile)) {
+                $stmt = $conn->prepare("SELECT E_ID FROM employees WHERE username = ?");
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                if ($result->num_rows == 1) {
+                    $row = $result->fetch_assoc();
+                    $eid = $row['E_ID'];
+                    $material = $_POST["material"];
+                    $name = $_POST["name"];
+                    $price = $_POST["price"];
+                    $stmt = $conn->prepare("INSERT INTO product (PName, prices, Material, image, E_ID) VALUES (?, ?, ?, ?, ?)");
+                    $stmt->bind_param("sssss", $name, $price, $material, $file, $eid);
+                    if ($stmt->execute()) {
+                        echo '<script>alert("Successful");</script>';
+                    } else {
+                        echo '<script>alert("Error!");</script>';
+                    }
+                    $stmt->close();
+                } else {
+                    echo '<script>alert("You are not admin!");</script>';
+                }
+            } else {
+                echo "Please choose another pic!";
+            }
+        }
+    } else {
+        echo "No files uploaded.";
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,10 +136,10 @@ if ($result->num_rows == 1) {
         </a>
     </div>
     <div class="layout">
-        <form class="flayout">
+        <form class="flayout" method="post" enctype="multipart/form-data">
             <div class="postlist">
                 <label for="combobox">Product Catalog</label>
-                <select class="combobox">
+                <select class="combobox" name="material">
                     <option>Accessory</option>
                     <option>Taiwan Scroll Door</option>
                     <option>Aluminum Door</option>
@@ -96,23 +150,22 @@ if ($result->num_rows == 1) {
                 <div class="postlist">
                     <div class="postlist">
                         <label for="name">Product Name</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required >
                     </div>
                     <div class="postlist">
                         <label for="price">Price</label>
-                        <input type="text" name="price">
+                        <input type="text" name="price" required >
                     </div>
                     <div class="imglist" id="imglist">
-                        <input id="file" type="file" name="file" multiple required>
+                        <input id="file" type="file" name="file[]" multiple required>
                         <label for="file">Upload </label>
                         <span id="upstt" style="margin-left: 20px;">None</span>
-                        <input id="postbtn" type="button" value="Post">
+                        <input id="postbtn" type="submit" value="Post">
                     </div>
                 </div>
         </form>
     </div>
     <script>
-        // let uploaded = 'Uploaded';
         let upload = document.getElementById('file');
         let upstt = document.getElementById('upstt')
         upload.addEventListener('change', function(event) {
