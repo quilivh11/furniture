@@ -66,10 +66,6 @@ if ($result->num_rows == 1) {
         </a>
         <a href="/php/Contact.php" id="link">
             <button id="optionbar">Contact</button>
-            <script>
-                var option = document.querySelector('.product');
-                option.classList.toggle('color');
-            </script>
         </a>
         <a href="/php/Homepage.php" id="link">
             <button id="optionbar">About us</button>
@@ -99,7 +95,6 @@ if ($result->num_rows == 1) {
         </a>
     </div>
     <div class="contact">
-        <h1>Hello <?php echo "$username";?>!</h1>
         <h2>Our contact informations</h2>
         <p>Company: Cong Ty Minh Tam Door</p>
         <p>Address: Duong Minh Tam</p>

@@ -7,6 +7,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["phone"];
     $password = $_POST["password"];
@@ -16,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        session_start();
         $_SESSION["username"] = $username;
         $_SESSION["password"] = $password;
         $dbpassword = $row['password'];
@@ -27,28 +28,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $stmt->get_result();
             if ($result->num_rows == 1) {
                 header("Location: /php/Admin.php");
+                exit();
             } else {
                 header("Location: /php/Homepage.php");
                 exit();
             }
         } else {
-    //         echo "<script>
-    //         function Menu() {
-    //             setTimeout(function() {
-    //                 var option = document.querySelector('.popup');
-    //                 option.classList.add('visible');
-    //             }, 200);
-    //             option.classList.add('hidden');
-    //             var button = document.querySelector('#gotit');
-    //             button.classList.toggle('roll');
-    //         }   
-    //         Menu(); 
-    // </script>";
-    echo "Wrong password!";
+            echo "<script>
+            function show() {
+                setTimeout(function() {
+                    var option = document.querySelector('.popup');
+                    option.classList.add('visible');
+                }, 200);
+            }   
+            show(); 
+            function hide(){    
+                var button = document.querySelector('.popup');
+                button.classList.add('hidden');
+            }
+    </script>";
         }
     
     } else {
-        echo "The user not exist!";
+        echo "<script>
+            function show() {
+                setTimeout(function() {
+                    var option = document.querySelector('.popup1');
+                    option.classList.add('visible');
+                }, 200);
+            }   
+            show(); 
+            function hide(){    
+                var button = document.querySelector('.popup1');
+                button.classList.add('hidden');
+            }
+    </script>";
     }
 }
 if (!empty($_SESSION)) {
@@ -69,13 +83,13 @@ if ($result->num_rows == 1) {
         $result = $stmt->get_result();
         if ($result->num_rows == 1) {
             header("Location: /php/Admin.php");
+            exit();
         } else {
             header("Location: /php/Homepage.php");
             exit();
         }
     }
 }
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -119,11 +133,14 @@ $conn->close();
         </div>
     </div>
     <div class="popup">
-        <!-- <div id="popup" > -->
         <h1>X</h1>
         <p>Wrong password</p>
-        <button id="gotit">Got it</button>
-        <!-- </div> -->
+        <button onclick="hide()" id="gotit">Got it</button>
+    </div>
+    <div class="popup1">
+        <h1>X</h1>
+        <p>The user not exist</p>
+        <button onclick="hide()" id="gotit">Got it</button>
     </div>
 </body>
 
