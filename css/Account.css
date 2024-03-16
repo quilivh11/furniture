@@ -126,3 +126,17 @@ input[type="tel"] {
     padding: 10px;
     border-radius: 5px;
 }
+#sender{
+    
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    width: 80%;
+}
+#formget{
+    text-align: left !important;
+}

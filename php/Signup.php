@@ -28,6 +28,12 @@
                     <label for="cfpassword">Confirm Password:</label>
                     <input type="password" id="cfpassword" name="cfpassword" required>
                 </div>
+                <div class="form-group" id="formget" >
+                    <label for="verifier">Verify code:</label>
+                    <input type="number" id="verifier" name="verifier" onKeyPress="if(this.value.length==6) return false;"required>
+                    <button type="button" id="sender" >Get code</button>
+                </div>
+                
                 <div class="form-group">
                     <input type="checkbox" name="ok" required>
                     <label for="ok" id="ok">I agree to all <a id="fs" href="/php/privacy.php">privacy policies</a></label>
@@ -36,6 +42,7 @@
                     <input type="submit" value="Sign up" required>
                 </div>
             </form>
+            
         </div>
     </div>
     <scrip>
@@ -84,6 +91,42 @@
         $conn->close();
         ?>
     </scrip>
+    
+<script>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB2vZtKgqWTEZctENNfXgovE9vuUIRFSDI",
+  authDomain: "verify-shop.firebaseapp.com",
+  projectId: "verify-shop",
+  storageBucket: "verify-shop.appspot.com",
+  messagingSenderId: "185499960946",
+  appId: "1:185499960946:web:139f44e65a4d356d5ca4eb",
+  measurementId: "G-7B62FQKH3W"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+function render(){
+    window.recaptchaVerifier = new firebase.auth.recaptchaVerifier('recaptcha-container');
+    recaptchaVerifier.render();
+}
+function phoneAuth(){
+    var number = document.getElementById('phone')
+    firebase.auth(),signInWithPhoneNumber(number,window.recaptchaVerifier).then(function(confirmationResult){
+        coderesult =confirmationResult;
+        // document.getElementById()
+    })
+}
+</script>
 </body>
 
 </html>

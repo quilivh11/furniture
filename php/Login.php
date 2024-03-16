@@ -32,19 +32,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
         } else {
-            echo "<script>
-            function Menu() {
-                setTimeout(function() {
-                    var option = document.querySelector('.popup');
-                    option.classList.add('visible');
-                }, 200);
-                option.classList.add('hidden');
-                var button = document.querySelector('#gotit');
-                button.classList.toggle('roll');
-            }   
-            Menu(); 
-    </script>";
-    // echo "Wrong password!";
+    //         echo "<script>
+    //         function Menu() {
+    //             setTimeout(function() {
+    //                 var option = document.querySelector('.popup');
+    //                 option.classList.add('visible');
+    //             }, 200);
+    //             option.classList.add('hidden');
+    //             var button = document.querySelector('#gotit');
+    //             button.classList.toggle('roll');
+    //         }   
+    //         Menu(); 
+    // </script>";
+    echo "Wrong password!";
         }
     
     } else {
