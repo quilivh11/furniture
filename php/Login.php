@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["phone"];
+    $username = $_POST["email"];
     $password = $_POST["password"];
     $stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
     $stmt->bind_param("s", $username);
@@ -51,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
     </script>";
         }
-    
     } else {
         echo "<script>
             function show() {
@@ -71,25 +70,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (!empty($_SESSION)) {
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];
-}
-$stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
-$stmt->bind_param("s", $username);
-$stmt->execute();
-$result = $stmt->get_result();
-if ($result->num_rows == 1) {
-    $row = $result->fetch_assoc();
-    $dbpassword = $row['password'];
-    if (password_verify($password, $dbpassword)) {
-        $stmt = $conn->prepare("SELECT username FROM employees WHERE username = ?");
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        if ($result->num_rows == 1) {
-            header("Location: /php/Admin.php");
-            exit();
-        } else {
-            header("Location: /php/Homepage.php");
-            exit();
+    $stmt = $conn->prepare("SELECT password FROM accounts WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $dbpassword = $row['password'];
+        if (password_verify($password, $dbpassword)) {
+            $stmt = $conn->prepare("SELECT username FROM employees WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows == 1) {
+                header("Location: /php/Admin.php");
+                exit();
+            } else {
+                header("Location: /php/Homepage.php");
+                exit();
+            }
         }
     }
 }
@@ -114,8 +113,8 @@ $conn->close();
 
             <form id="form" action="/php/Login.php" method="post">
                 <div class="form-group" id="num">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" minlength="10" maxlength="10" id="phone" name="phone" pattern="^0.*[0-9].*" title="phone number is not true" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"  required>
                 </div>
                 <div class="form-group" id="pass">
                     <label for="password">Password:</label>
