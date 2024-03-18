@@ -1,4 +1,5 @@
 <?php
+include('C:\Users\quili\OneDrive\Máy tính\furniture\global.php');
 $servername = "localhost";
 $username = "root";
 $password = "1234";
@@ -9,6 +10,7 @@ if ($conn->connect_error) {
 }
 session_start();
 if (!empty($_SESSION)) {
+    
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];
     $stmt = $conn->prepare("SELECT username FROM employees WHERE username = ?");
