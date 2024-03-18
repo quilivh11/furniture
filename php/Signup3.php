@@ -41,59 +41,40 @@
         </div>
     </div>
     
+    <script>
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "1234";
+        $dbname = "store";
+        session_start();
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $status = "disable";
+        $username = $_POST["email"];
+        $password = $_POST["password"];
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $insertAccountStmt = $conn->prepare("INSERT INTO accounts (username, password,status) VALUES (?, ?, ?)");
+        $insertAccountStmt->bind_param("sss", $username, $password,$status);
+        if ($insertAccountStmt->execute()) {
+            $_SESSION["username"] = $username;
+            $_SESSION["password"] = $password;
+        }
+        $insertAccountStmt->close();
+        }
+        
+        ?>
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
-
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyB2vZtKgqWTEZctENNfXgovE9vuUIRFSDI",
-            authDomain: "verify-shop.firebaseapp.com",
-            projectId: "verify-shop",
-            storageBucket: "verify-shop.appspot.com",
-            messagingSenderId: "185499960946",
-            appId: "1:185499960946:web:139f44e65a4d356d5ca4eb",
-            measurementId: "G-7B62FQKH3W"
-        };
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-
-        var signupbtn = document.getElementById("signupbtn")
-        var emailsignup = document.getElementById("email")
-        var passswordsignup = document.getElementById("password")
-        signupbtn.onclick = function() {
-            signupbtn.disabled = true;
-            signupbtn.textContent = "Registering Your Account! ";
-            firebase.auth().createUserWithEmailAndPassword(emailsignup.value, passswordsignup.value).then(function(response) {
-                    sendingVerifyEmail(signupbtn);
-                    console.log(response);
-                })
-                .catch(function(error) {
-                    signupbtn.disabled = false;
-                    signupbtn.textContent = "Sign Up";
-                    console.log(error);
-                })
-
-        }
-
-        function sendingVerifyEmail(button) {
-            firebase.auth().currentUser.sendEmailVerification().then(function(response) {
-
-                    signupbtn.textContent = "Please check your email";
-                    signupbtn.disabled = true;
-                    sessionStorage.setItem('registeredEmail', emailsignup.value);
-                    console.log(response);
-                    window.location.href = "/php/status.php";
-                })
-                .catch(function(error) {
-                    signupbtn.disabled = false;
-                    signupbtn.textContent = "Sign up";
-                    console.log(error);
-                })
-        }
-    </script>
+    <script defer  src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src='/js/signup.js' ></script>
 </body>
 
 </html>

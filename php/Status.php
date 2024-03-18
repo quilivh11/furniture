@@ -1,14 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "1234";
-$dbname = "store";
-session_start();
-$username = $_POST["username"];
-$password = $_POST["password"];
-echo $username;
-echo $password;
-?>
 <!DOCTYPE html>
 <html>
 
