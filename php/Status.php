@@ -44,7 +44,7 @@
                         if (user.email === registeredEmail) {
                             if (user.emailVerified) {
                                 console.log("Email has been verified.");
-                                window.location.href = "/php/insertsignup.php";
+                                window.location.href = "/php/Homepage.php";
                                 
                             } else {
                                 console.log("Email has not been verified yet.");
