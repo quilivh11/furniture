@@ -12,8 +12,12 @@
     <h1>Please check your email for verify</h1>
     <p>Click Reload after you was verify your email</p>
 
-    
-
+<?php
+include("dbcon.php");
+session_start();
+$username = $_SESSION["username"];
+include("waitreset.php");
+?>
 </body>
 
 </html>

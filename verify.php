@@ -1,5 +1,5 @@
 <?php
-include("/verify/dbcon.php");
+include("dbcon.php");
 
 if(isset($_POST['signupbtn'] )){
     $username = $_POST['email'];
@@ -18,7 +18,7 @@ if(isset($_POST['signupbtn'] )){
     if($createdUser){
         $_SESSION['status'] = " Create successfully!";
         $auth->sendEmailVerificationLink($username);
-        header("Location: /php/status.php");
+        header("Location: status.php");
         exit();
         
     }else{

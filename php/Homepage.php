@@ -88,7 +88,7 @@ if ($result->num_rows == 1) {
         <a href="/php/Login.php" class="link">
             <button id="optionbtn">Sign in</button>
         </a>
-        <a href="/php/Signup.php" class="link">
+        <a href="/register.php" class="link">
             <button id="optionbtn">Sign up</button>
         </a>
     </div>

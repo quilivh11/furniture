@@ -12,5 +12,6 @@ $factory = (new Factory())
     ->withDatabaseUri('https://verify-shop-default-rtdb.firebaseio.com/');
 $database = $factory->createDatabase();
 $auth = $factory->createAuth();
+$uid = 'some-uid';
   
  

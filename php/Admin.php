@@ -70,14 +70,6 @@ if ($result->num_rows == 1) {
         <img src="/images/search.png" id="searchicon" style="color: blue;" >
         </a>
     </div>
-    <div class="option">
-        <a href="/php/Login.php" class="link">
-            <button id="optionbtn">Sign in</button>
-        </a>
-        <a href="/php/Signup.php" class="link">
-            <button id="optionbtn">Sign up</button>
-        </a>
-    </div>
     <div class="optionlogged">
         <h1>Hi admin, <?php echo "$username";?>!</h1>
         <a href="#" class="link">

@@ -121,7 +121,7 @@ $conn->close();
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div>
-                    <a id="fs" href="/php/Forgot.php">Forgetten password?</a><a> or </a><a href="/php/Signup.php" id="fs">Sign up</a>
+                    <a id="fs" href="/Forgot.php">Forgetten password?</a><a> or </a><a href="/register.php" id="fs">Sign up</a>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Sign in">

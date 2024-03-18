@@ -39,7 +39,7 @@ function sendingVerifyEmail(button) {
             window.location.href = "/php/status.php";
         })
         .catch(function(error) {
-            signupbtn.disabled = false;
+            signupbtn.disabled = false; 
             signupbtn.textContent = "Sign up";
             console.log(error);
         })

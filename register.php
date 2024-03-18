@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("/verify/dbcon.php");
+include('dbcon.php');
 
 $servername = "localhost";
 $username = "root";
@@ -74,6 +74,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group">
                     <button type="submit" id="signupbtn" name="signupbtn" required>Sign up</button>
+                    <a href="/php/Login.php">Already have an account? Click here</a>
                 </div>
             </form>
 
