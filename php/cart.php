@@ -103,7 +103,7 @@ if (!empty($_SESSION)) {
     </div>
     <div>
         <h1>All product</h1>
-        <?php
+        <!-- <?php
         $vd = 0;
         $stmt = $conn->prepare("SELECT PName,prices,image,validproduct FROM product WHERE validproduct > ?");
         $stmt->bind_param("s", $vd);
@@ -129,17 +129,17 @@ if (!empty($_SESSION)) {
             echo "Dont have valid product";
         }
         $conn->close();
-        ?>
+        ?> -->
         
 
     </div>
-    <div>
-        <a href="/php/cart.php" >
+    <!-- <div>
+        <a href="#" >
             <img src="/images/cart.png" id="cart" >
         </a>
-    </div>
+    </div> -->
 </body>
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         var plusButtons = document.querySelectorAll('.plus');
         var minusButtons = document.querySelectorAll('.minus');
@@ -163,5 +163,5 @@ if (!empty($_SESSION)) {
             });
         });
     });
-</script>
+</script> -->
 </html>

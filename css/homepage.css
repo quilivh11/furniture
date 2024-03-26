@@ -189,6 +189,21 @@ body{
     width:300px;
     height: 250px;
 }
+#cart{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    /* color: red; */
+    bottom: 20px;
+    right: 20px; 
+    background-color: rgba(190, 190, 190, 0.611);
+    border-radius: 10px;
+}
+.numberss{
+    width: 40px; 
+    text-align:center;
+
+}
 @media (max-width: 900px){
     .header{
         display: flex;
